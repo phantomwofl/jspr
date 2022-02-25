@@ -80,7 +80,7 @@ public class Server {
         }
     }
 
-    private static void handle (Socket socket) {
+    private static void handle(Socket socket) {
         while (true) {
             try {
                 final var in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -100,5 +100,9 @@ public class Server {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void addHandler(String method, String message, Handler handler) {
+        //todo
     }
 }
