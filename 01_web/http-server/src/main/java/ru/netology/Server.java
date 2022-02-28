@@ -15,13 +15,20 @@ import java.util.concurrent.Executors;
 
 public class Server {
 
+    int port;
+    int numberOfThreads;
+
+    Server (int port, int numberOfThreads) {
+        this.port = port;
+        this.numberOfThreads = numberOfThreads;
+    }
 
     public void start() {
 
-        try (final var serverSocket = new ServerSocket(9999)) {
+        try (final var serverSocket = new ServerSocket(port)) {
             while (true) {
 
-                ExecutorService pool = Executors.newFixedThreadPool(64);
+                ExecutorService pool = Executors.newFixedThreadPool(numberOfThreads);
                 final var socket = serverSocket.accept();
                 pool.submit(() -> handle(socket));
 
