@@ -1,12 +1,12 @@
 package ru.netology;
 
-import java.io.BufferedOutputStream;
+import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        final var server = new Server(9999, 64);
+        final var server = new Server();
         server.start();
         }
 }
