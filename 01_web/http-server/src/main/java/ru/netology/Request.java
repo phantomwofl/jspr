@@ -13,5 +13,9 @@ public class Request {
         this.body = body;
     }
 
+    Request (String method, String header) {
+        this.method = method;
+        this.header = header;
+    }
 
 }
